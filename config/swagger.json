@@ -1,0 +1,119 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Notification Engine",
+    "description": "Notification API list"
+  },
+  "tags": [
+    {
+      "name": "Weather",
+      "description": "API for Client management"
+    }
+  ],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/api/weather/create": {
+      "post": {
+        "tags": ["Weather"],
+        "description": "Add city weather details in database",
+        "parameters": [
+          {
+            "name": "CityName",
+            "in": "body",
+            "description": "city weather details",
+            "schema": {
+              "$ref": "#/definitions/cityName"
+            }
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {}
+      }
+    },
+    "/api/weather/current/{name}": {
+      "parameters": [
+        {
+          "name": "name",
+          "in": "path",
+          "required": true,
+          "description": "city name",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": ["Weather"],
+        "summary": "to get current weather",
+        "responses": {}
+      }
+    },
+    "/api/weather/forecast/{name}": {
+      "parameters": [
+        {
+          "name": "name",
+          "in": "path",
+          "required": true,
+          "description": "city name",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": ["Weather"],
+        "summary": "to get current weather",
+        "responses": {}
+      }
+    }
+  },
+  "definitions": {
+ 
+    "cityName": {
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "uniqueItems": true
+        },
+        "region": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "lat": {
+          "type": "number"
+        },
+        "lon": {
+          "type": "number" 
+        },
+        "tz_id": {
+          "type": "string"
+        },
+        "localtime_epoch": {
+          "type": "number"
+        },
+        "localtime": {
+          "type": "string"
+        },
+        "sunrise": {
+          "type": "string"
+        },
+        "sunset": {
+          "type": "string"
+        },
+        "moonrise": {
+          "type": "string"
+        },
+        "moonset": {
+          "type": "string"
+        },
+        "moon_phase": {
+          "type": "string"
+        },
+        "moon_illumination": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
