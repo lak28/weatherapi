@@ -2,13 +2,13 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "Notification Engine",
-    "description": "Notification API list"
+    "title": "Weather Information",
+    "description": "Weather API list"
   },
   "tags": [
     {
       "name": "Weather",
-      "description": "API for Client management"
+      "description": "API for Weather details of a city"
     }
   ],
   "consumes": ["application/json"],
